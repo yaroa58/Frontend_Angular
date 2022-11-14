@@ -6,7 +6,12 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './plantilla/navbar/navbar.component';
 import { FooterComponent } from './plantilla/footer/footer.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
-import { CrearUsuarioComponent } from './administracion/usuarios/crear-usuario/crear-usuario.component';
+import { CrearUsuarioComponent } from './modulos/administracion/usuarios/crear-usuario/crear-usuario.component';
+import { ConocenosComponent } from './modulos/conocenos/conocenos.component';
+import { CrearMascotasComponent } from './modulos/mascotas/crear-mascotas/crear-mascotas.component';
+import { AprobacionesComponent } from './modulos/aprobaciones/aprobaciones.component';
+
+
 
 @NgModule({
   declarations: [
@@ -14,7 +19,10 @@ import { CrearUsuarioComponent } from './administracion/usuarios/crear-usuario/c
     NavbarComponent,
     FooterComponent,
     InicioComponent,
-    CrearUsuarioComponent
+    CrearUsuarioComponent,
+    ConocenosComponent,
+    CrearMascotasComponent,
+    AprobacionesComponent,
   ],
   imports: [
     BrowserModule,
