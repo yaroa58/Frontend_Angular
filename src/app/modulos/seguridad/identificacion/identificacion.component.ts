@@ -24,10 +24,8 @@ export class IdentificacionComponent implements OnInit {
     let usuario = this.fgValidador.controls["usuario"].value;
     let contrasena = this.fgValidador.controls["contrasena"].value;
     let contrasenaCifrada = cryptoJS.MD5(contrasena).toString()
-    // let contrasenaCifrada = cryptoJS.MD5(contrasena).toString();
     this.servicioSeguridad.Identificar(usuario, contrasenaCifrada).subscribe((datos: any) => {
-      //ok
-      alert('Datos Correctos')
+      this.servicioSeguridad.AlmacenarSesion(datos);
     }, (error: any) => {
       alert('Datos inválidos')
     })

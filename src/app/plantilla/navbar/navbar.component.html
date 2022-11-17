@@ -44,25 +44,28 @@
 
       <div class="collapse navbar-collapse" id="navbarSupport">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="seInicioSesion">
             <a class="nav-link active" routerLink="inicio" routerLinkActive="active">Inicio</a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item " *ngIf="seInicioSesion">
             <a class="nav-link" routerLink="crear-mascotas">Acerca de Nosotros</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="seInicioSesion">
             <a class="nav-link" routerLink="mascotas">Mascotas</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="seInicioSesion">
             <a class="nav-link" routerLink="conocenos">Contáctenos</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="seInicioSesion">
             <a class="nav-link" routerLink="crear-usuario">Regístrate</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="seInicioSesion">
             <a class="nav-link" routerLink="aprobaciones">Aprobaciones</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="seInicioSesion">
+            <a class="nav-link" routerLink="/seguridad/cerrar-sesion">Cerrar Sesion</a>
+          </li>
+          <li class="nav-item" *ngIf="!seInicioSesion">
             <a class="nav-link" routerLink="/seguridad/identificacion">Login</a>
           </li>
         </ul>
