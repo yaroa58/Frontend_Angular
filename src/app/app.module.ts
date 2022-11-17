@@ -10,8 +10,7 @@ import { CrearUsuarioComponent } from './modulos/administracion/usuarios/crear-u
 import { ConocenosComponent } from './modulos/conocenos/conocenos.component';
 import { CrearMascotasComponent } from './modulos/mascotas/crear-mascotas/crear-mascotas.component';
 import { AprobacionesComponent } from './modulos/aprobaciones/aprobaciones.component';
-
-
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -19,14 +18,15 @@ import { AprobacionesComponent } from './modulos/aprobaciones/aprobaciones.compo
     NavbarComponent,
     FooterComponent,
     InicioComponent,
-    CrearUsuarioComponent,
+    // CrearUsuarioComponent,
     ConocenosComponent,
     CrearMascotasComponent,
     AprobacionesComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
