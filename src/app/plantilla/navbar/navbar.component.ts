@@ -19,11 +19,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.subs = this.seguridadservicio.ObtenerDatosUsuarioEnSesion().subscribe((datos: ModeloIdentificar) => {
-      if (datos) {
-        this.seInicioSesion = true;
-      } else {
-        this.seInicioSesion = false;
-      }
+      this.seInicioSesion = datos.estaIdentificado;
+   
     })
   }
 
