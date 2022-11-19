@@ -11,6 +11,10 @@ import { CrearPlanComponent } from './plan/crear-plan/crear-plan.component';
 import { BuscarPlanComponent } from './plan/buscar-plan/buscar-plan.component';
 import { EditarPlanComponent } from './plan/editar-plan/editar-plan.component';
 import { EliminarPlanComponent } from './plan/eliminar-plan/eliminar-plan.component';
+import { CrearProductoComponent } from './producto/crear-producto/crear-producto.component';
+import { BuscarProductoComponent } from './producto/buscar-producto/buscar-producto.component';
+import { EditarProductoComponent } from './producto/editar-producto/editar-producto.component';
+import { EliminarProductoComponent } from './producto/eliminar-producto/eliminar-producto.component';
 
 
 @NgModule({
@@ -22,7 +26,11 @@ import { EliminarPlanComponent } from './plan/eliminar-plan/eliminar-plan.compon
     CrearPlanComponent,
     BuscarPlanComponent,
     EditarPlanComponent,
-    EliminarPlanComponent
+    EliminarPlanComponent,
+    CrearProductoComponent,
+    BuscarProductoComponent,
+    EditarProductoComponent,
+    EliminarProductoComponent
   ],
   imports: [
     CommonModule,
