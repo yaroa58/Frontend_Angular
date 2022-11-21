@@ -2,27 +2,27 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdministracionRoutingModule } from './administracion-routing.module';
-import { EliminarProductoComponent } from './productos/eliminar-producto/eliminar-producto.component';
-import { CrearProductoComponent } from './productos/crear-producto/crear-producto.component';
-import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
-import { BuscarProductoComponent } from './productos/buscar-producto/buscar-producto.component';
 import { EliminarUsuarioComponent } from './usuarios/eliminar-usuario/eliminar-usuario.component';
 import { EditarUsuarioComponent } from './usuarios/editar-usuario/editar-usuario.component';
 import { BuscarUsuarioComponent } from './usuarios/buscar-usuario/buscar-usuario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
+import { CrearPlanComponent } from './plan/crear-plan/crear-plan.component';
+import { BuscarPlanComponent } from './plan/buscar-plan/buscar-plan.component';
+import { EditarPlanComponent } from './plan/editar-plan/editar-plan.component';
+import { EliminarPlanComponent } from './plan/eliminar-plan/eliminar-plan.component';
 
 
 @NgModule({
   declarations: [
-    EliminarProductoComponent,
-    CrearProductoComponent,
-    EditarProductoComponent,
-    BuscarProductoComponent,
     EliminarUsuarioComponent,
     EditarUsuarioComponent,
     BuscarUsuarioComponent,
-    CrearUsuarioComponent
+    CrearUsuarioComponent,
+    CrearPlanComponent,
+    BuscarPlanComponent,
+    EditarPlanComponent,
+    EliminarPlanComponent
   ],
   imports: [
     CommonModule,
