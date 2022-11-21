@@ -28,7 +28,7 @@ export class IdentificacionComponent implements OnInit {
     let contrasenaCifrada = cryptoJS.MD5(contrasena).toString()
     this.servicioSeguridad.Identificar(usuario, contrasenaCifrada).subscribe((datos: any) => {
       this.servicioSeguridad.AlmacenarSesion(datos);
-      this.router.navigate(["inicio"]);
+      this.router.navigate(["/inicio"]);
     }, (error: any) => {
       alert('Datos inválidos')
     })
