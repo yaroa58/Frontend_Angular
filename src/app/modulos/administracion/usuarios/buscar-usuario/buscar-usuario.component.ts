@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ModeloUsuario } from 'src/app/modelos/plan';
+import { ModeloUsuario } from 'src/app/modelos/usuario';
+import { UsuariosService } from 'src/app/servicios/usuarios.service';
 import Swal from 'sweetalert2'
 @Component({
   selector: 'app-buscar-usuario',
@@ -10,14 +11,14 @@ export class BuscarUsuarioComponent implements OnInit {
 
   listadoRegistros: ModeloUsuario[]=[];
 
-  constructor(private usuarioServicio: UsuarioService) { }
+  constructor(private usuarioServicio: UsuariosService) { }
 
   ngOnInit(): void {
     this.ObtenerListadoUsuarios();
   }
   //Llamamos al metodo
   ObtenerListadoUsuarios(){
-    this.usuarioServicio.obtenerUsuario().subscribe((datos: ModeloUsuario[]=>{
+    this.usuarioServicio.obtenerUsuario().subscribe((datos: ModeloUsuario[])=>{
       this.listadoRegistros = datos;
     })
   }
