@@ -1,1 +1,45 @@
-<p>buscar-usuario works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    
+                    <span class="titulo">Usuarios</span><br>
+                    <br>
+                    <a routerLink="/administracion/crear-usuarios" class="btn btn-success float-end">Nuevo Usuario</a>
+                    <table id="Tabla"  class="table table-success table-striped mt-4">
+                        <thead>
+                          <tr>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Contraseña</th>
+                            <th scope="col">Rol</th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Eliminar</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let p of listadoRegistros">
+                            <td>{{p.Cedula}}</td>
+                            <td>{{p.Nombre}}</td>
+                            <td>{{p.Apellido}}</td>
+                            <td>{{p.Telefono}}</td>
+                            <td>{{p.Correo}}</td>
+                            <td>{{p.Contraseña}}</td>
+                            <td>{{p.Rol}}</td>
+                            <td><i class='fa fa-check-square-o' style='color: blue' routerLink="/administracion/editar-usuario/{{p.id}}"></i></td>
+                            <td>
+                            <i (click)="eliminarUsuario(p.id)" class='fa fa-trash' style='color: red' routerLink="/administracion/eliminar-usuario/{{p.id}}"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
