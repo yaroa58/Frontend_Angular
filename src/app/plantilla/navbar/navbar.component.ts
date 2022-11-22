@@ -15,15 +15,12 @@ export class NavbarComponent implements OnInit {
   subs: Subscription = new Subscription()
 
 
-  constructor(private seguridadservicio: SeguridadService) { }
+  constructor(private seguridadServicio: SeguridadService) { }
 
   ngOnInit(): void {
-    this.subs = this.seguridadservicio.ObtenerDatosUsuarioEnSesion().subscribe((datos: ModeloIdentificar) => {
-      if (datos) {
-        this.seInicioSesion = true;
-      } else {
-        this.seInicioSesion = false;
-      }
+    this.subs = this.seguridadServicio.ObtenerDatosUsuarioEnSesion().subscribe((datos: ModeloIdentificar) => {
+      this.seInicioSesion = datos.estaIdentificado;
+   
     })
   }
 

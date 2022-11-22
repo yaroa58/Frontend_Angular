@@ -8,7 +8,7 @@ import { ModeloIdentificar } from '../modelos/identificar.modelo';
   providedIn: 'root'
 })
 export class SeguridadService {
-  url = "http://localhost:3000"
+  url = 'http://localhost:3000'
   datosUsuarioEnSesion = new BehaviorSubject<ModeloIdentificar>(new ModeloIdentificar());
 
   constructor(private http: HttpClient) {
@@ -18,11 +18,15 @@ export class SeguridadService {
   VerificarSesionActual() {
     let datos = this.obtenerInformacionSesion();
     if (datos) {
-      this.datosUsuarioEnSesion.next(datos);
+      this.RefrescarDatosSesion(datos);
     }
   }
 
-  ObtenerDatosUsuarioEnSesion(){
+  RefrescarDatosSesion(datos: ModeloIdentificar) {
+    this.datosUsuarioEnSesion.next(datos);
+  }
+
+  ObtenerDatosUsuarioEnSesion() {
     return this.datosUsuarioEnSesion.asObservable()
   }
 
@@ -37,8 +41,10 @@ export class SeguridadService {
     })
   }
   AlmacenarSesion(datos: ModeloIdentificar) {
+    datos.estaIdentificado = true;
     let stringDatos = JSON.stringify(datos);
     localStorage.setItem("datosSesion", stringDatos)
+    this.RefrescarDatosSesion(datos);
   }
   obtenerInformacionSesion() {
     let datosString = localStorage.getItem("datosSesion");
@@ -51,6 +57,7 @@ export class SeguridadService {
   }
   EliminarInformacionSesion() {
     localStorage.removeItem("datosSesion");
+    this.RefrescarDatosSesion(new ModeloIdentificar());
   }
   SeHaIniciadoSesion() {
     let datosString = localStorage.getItem("datosSesion");

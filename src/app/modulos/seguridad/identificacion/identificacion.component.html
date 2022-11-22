@@ -7,7 +7,7 @@
             <div class="container">
               <h1 class="text-center wow fadeInUp">Inicia Sesión</h1>
 
-              <form [formGroup]="fgValidador" (ngSubmit)="identificarUsusario()">
+              <form [formGroup]="fgValidador" (ngSubmit)="identificarUsuario()">
                 <div class="row mb-4">
                   <div  class="form-group">
                     <input formControlName="usuario" type="text" id="correo" class="form-control" placeholder="Correo..">
@@ -19,8 +19,8 @@
                       placeholder="Password" required>
                   </div>
                 </div>
-                <button [disabled]="!fgValidador.valid" type="submit"
-                  class="btn btn-primary wow zoomIn">Regístrate</button>
+                <button type="submit"
+                  class="btn btn-primary wow zoomIn">Iniciar Sesión</button>
               </form>
             </div>
           </div>
